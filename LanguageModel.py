@@ -12,6 +12,7 @@ def prior_probability(word):
     except:
         return False
 
+
 def learn_language_model(corpus_name):
     global prior_probability_table
     corpus = open(corpus_name).read()
@@ -19,6 +20,7 @@ def learn_language_model(corpus_name):
     dictionary = Counter(all_words)
     total_count = len(all_words) * 1.0
     for key in dictionary:
+        dictionary[key] *= 10000
         dictionary[key] /= total_count
     prior_probability_table = dictionary
 
