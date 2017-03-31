@@ -139,7 +139,7 @@ def traceback():
         if mov == diagonal_mov:
             first_aligned.append(first_string[i])
             second_aligned.append(second_string[j])
-            EM.sub_confusion_matrix[first_string[i]][second_string[j]] += 1
+            EM.sub_confusion_matrix[second_string[j]][first_string[i]] += 1
             i += 1
             j += 1
         elif mov == left_mov:

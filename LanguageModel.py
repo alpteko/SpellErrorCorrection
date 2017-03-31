@@ -23,9 +23,17 @@ def learn_language_model(corpus_name):
         dictionary[key] *= 10000
         dictionary[key] /= total_count
     prior_probability_table = dictionary
+    print("Prior Probability Matrix is generated.")
 
 
 def tokenize(corpus):
     all_words = re.findall(r'\w+', corpus.lower())
     return all_words
 
+
+def check_word(word):
+    global prior_probability_table
+    if word in prior_probability_table:
+        return True
+    else:
+        return False
